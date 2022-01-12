@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title> Euler method </title>
+
+</head>
+<body>
+	<p> <h1> Euler method </h1>
+   <pre class='tab4') X= [] </pre>
+	 
+import numpy as np <br>
+import math as mt <br>
+def integrate(F,x,y,xStop,h): <br>
+    <pre class='tab4') X= [] </pre>
+    X= [] <br>
+    Y= [] <br>
+    X.append(x) <br>
+    Y.append(y) <br>
+    while x < xStop: <br>
+        h = min(h,xStop - x) <br>
+        y = y + h*F <br>
+        x = x + h <br>
+        X.append(x) <br>
+        Y.append(y) <br>
+    return np.array(X),np.array(Y) <br>
+
+x= 0.0 
+xStop= 0.5
+y=np.array(1)
+F=mt.sin(y) -1
+h=0.1
+print(integrate (F,x,y,xStop,h))
+
+        <hr><hr>
+	 </p>
+</body>
+</html

@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title> Secant method </title>
+
+</head>
+<body>
+	<p> <h1> Secant method </h1> 
+	Determine the root of f(x) = x<sup>3</sup> - e<sup>-2x</sup> + 1 with a tolerance value of 10<sup>-4</sup>
+	<pre class='tab4') X= [] </pre>
+import numpy as np
+import math 
+def secant(f, pzero, pone, eps, N):
+	n=1
+	p=0
+	while n<= N:
+		p = pone - f(pone)*(pone-pzero) / (f(pone) - f(pzero))
+		if np.isclose(f(p), 0) or np.abs(p-pone) < eps : 
+			print('p is', p , ' and the iteration number is ', n)
+			return 
+		pzero = pone 
+		pone = p
+		n +=1
+	y = f(p) 
+	print('the last iteration gives', p, 'with function value',y)
+secant(lambda x: x**3 - math.exp(-2*x) + 1, 1, -1, 1e-4, 20)
+	<hr> <hr>
+	</p>
+</body>
+</html

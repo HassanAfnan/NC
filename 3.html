@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title> Bisection method </title>
+
+</head>
+<body>
+	<p> <h1> Bisection method </h1> <br>
+Determine the root of f(x) = e<sup>x </sup> - 4x² with a tolerance value of 10-4 <br>
+<pre class='tab4') X= [] </pre>
+import math <br> 
+import numpy as np <br>
+def bisection (f, a, b, eps, N): <br>
+	n=1<br>
+	p=0<br>
+	while n <= N:<br>
+		p=a+(b-a)/2<br>
+		if np.isclose (f(p), 0) or np.abs(a-b)< eps: <br>
+	 		print(' the root is', p, 'and the iteration number is',n)<br>
+	 		return<br>
+	 	if f(a)*f(p)<0: <br>
+	 		b=p <br>
+	 	else: <br>
+	 		a=p
+	 	n +=1<br>
+	y=f(p)<br>
+	print('method did not converge. the last iteration gives',p, 'with function value', y) <br>
+bisection(lambda x: math.exp(x)-4*x**2, 0, 1, 1e-4, 13) <br>
+	  </p>
+	  <br> <hr><br>
+	  
+	  <p>
+Determine the root of f(x) =e<sup>-x</sup> - cos(x) with a tolerance of 10<sup>-4</sup> <br>
+<pre class='tab4') X= [] </pre>
+import math   <br>
+import numpy as np <br>
+def bisection (f, a, b, eps, N): <br>
+	n=1 <br>
+	p=0 <br>
+	while n <= N : <br>
+		p=a+ (b-a)/2 <br>
+		if np.isclose(f(p), 0) or np.abs(a-b)< eps: <br>
+			print('the root is ', p, 'and the iteration number is', n) <br>
+			return
+		if f(a)*f(p)<0: <br>
+			b=p <br>
+		else:<br>
+			a=p <br>
+		n +=1 <br>
+	y=f(p)<br>
+	print('method did not converge. the last iteration gives',p,'with function value',y)<br>
+bisection ( lambda x: math.exp(-x) - math.cos(x), 1, 2, 1e<sup>-4</sup>, 13) <hr><hr>
+	  
+	  </p>
+</body>
+</html

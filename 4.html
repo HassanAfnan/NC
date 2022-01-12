@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title> Newton method </title>
+
+</head>
+<body>
+	<p> <h1> Newton method </h1> 
+	Determine the root of f(x) = x<sup>3</sup> - e<sup>-2x</sup> +1 with a tolerance value of 10<sup>-4</sup> <br>
+		  <pre class='tab4') X= [] </pre>
+import numpy as np <br>
+import math<br>
+def newton(f, fprime, pin, eps, N): <br>
+	n=1 <br>
+	p = 0 
+	while n <= N:
+		p = pin - f(pin)/fprime(pin)
+		if np.isclose(f(p), 0) or np.abs(p-pin) < eps: 
+			print('p is', p, ' and the iteration number is ', n)
+			return 
+		pin = p
+		n +=1 
+	y = f(p)
+	print(' the last iteration gives', p, ' with function value ', y )
+newton(lambda x: x**3 - math.exp(-2*x) + 1, lambda x: 3*x**2 + 2 * math.exp(-2*x), 1, 10e-4, 20)  <br><br>
+	<hr><hr>
+	</p>
+</body>
+</html
